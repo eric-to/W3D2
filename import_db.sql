@@ -59,15 +59,20 @@ CREATE TABLE question_likes (
 INSERT INTO
   users (fname, lname)
 VALUES
-  ('Eric', 'To'),
-  ('Gabe', 'Ross');
+  ("Gabe", "Ross"),
+  ("Eric", "To"),
+  ("Cynthia", "Ma"),
+  ("Kush", "Patel"),
+  ("Sue", "Park");
   
 INSERT INTO
   questions (title, body, author_id)
 VALUES
-  ('Question One', 'Does this thing work?', 1),
-  ('2nd Question', 'What is this even?', 2),
-  ('Question the 3rd', 'Is this a question', 1);
+  ("Gabe Question", "Does this thing even work?", 1),
+  ("Eric Question", "Why are we doing this?", 2),
+  ("Cynthia Question", "I know everything. This isn't a question.", 3),
+  ("Kush Question", "Do you like App Academy?", 4),
+  ("Sue Question", "Is this a question?", 5);
   
 INSERT INTO
   question_follows (user_id, question_id)
@@ -76,15 +81,15 @@ VALUES
   (1, 2),
   (1, 3),
   (2, 1),
-  (2, 2),
-  (2, 3);
+  (3, 2),
+  (4, 5);
   
 INSERT INTO
   replies (question_id, parent_reply_id, author_id, body)
 VALUES
-  (1, NULL, 2, "Good question!"),
-  (1, 1, 1, "Thanks!"),
-  (2, NULL, 1, "Someone already asked this question.");
+  (1, NULL, 1, "EXCELLENT question!!!"),
+  (1, 1, 2, "Thanks!!!"),
+  (5, NULL, 4, "!!! WOW !!!");
   
 INSERT INTO
   question_likes (user_id, question_id)
